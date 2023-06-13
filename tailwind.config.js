@@ -16,7 +16,7 @@ module.exports = {
         "dark-background": "#151515",
         "dark-card": "#202022",
         "light-card": "#e6e6e6",
-        "light-background": "ffffff",
+        "light-background": "#ffffff",
       },
     },
   },
