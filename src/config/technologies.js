@@ -29,7 +29,7 @@ export default {
   },
   html: {
     color: "#dd4b25",
-    size: 25,
+    size: 27,
   },
   css: {
     color: "#254bdd",

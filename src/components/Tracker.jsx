@@ -1,6 +1,6 @@
 function Tracker({ active }) {
   return (
-    <div className="hidden lg:block my-5 w-96 mx-auto dark:text-[#949495]">
+    <div className="hidden lg:block my-2 w-96 mx-auto dark:text-[#949495]">
       <a className="flex gap-x-2 group my-4" href="#Work">
         01
         <span

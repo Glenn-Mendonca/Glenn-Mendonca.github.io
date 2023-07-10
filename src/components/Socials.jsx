@@ -9,7 +9,7 @@ function Socials() {
       <img
         className="rounded-full grayscale-0.2 transition-all delay-500"
         src={profile}
-        width={100}
+        width={90}
         alt="Glenn Mendonca"
       />
       <div className="flex gap-x-5 my-auto flex-col gap-y-3 xs:flex-row xs:gap-y-0">
