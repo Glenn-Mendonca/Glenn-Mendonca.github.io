@@ -1,0 +1,27 @@
+name: Competitive Programming Updates
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch data
+        id: CP-Updates
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: "https://clist.by/coder/glen17/ratings/"
+          method: "GET"
+
+      - name: Update data
+        run: echo "${{ steps.CP-Updates.outputs.response }}" > data/data.json
+
+      - name: Commit files
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: "data/data.json"
+          message: "Update CP ratings in data.json"
