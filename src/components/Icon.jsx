@@ -16,38 +16,38 @@ import { FaGolang } from "react-icons/fa6/index.esm";
 import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io/index.esm";
 import technologies from "../config/technologies";
 
-function Icon({ icon }) {
+function Icon({ icon, id }) {
   switch (icon) {
     case "docker":
-      return <SiDocker {...technologies[icon]} />;
+      return <SiDocker {...technologies[icon]} key={id} />;
     case "nodejs":
-      return <SiNodedotjs {...technologies[icon]} />;
+      return <SiNodedotjs {...technologies[icon]} key={id} />;
     case "react":
-      return <SiReact size={50} {...technologies[icon]} />;
+      return <SiReact size={50} {...technologies[icon]} key={id} />;
     case "tailwindcss":
-      return <SiTailwindcss {...technologies[icon]} />;
+      return <SiTailwindcss {...technologies[icon]} key={id} />;
     case "typescript":
-      return <SiTypescript {...technologies[icon]} />;
+      return <SiTypescript {...technologies[icon]} key={id} />;
     case "python":
-      return <SiPython {...technologies[icon]} />;
+      return <SiPython {...technologies[icon]} key={id} />;
     case "javascript":
-      return <SiJavascript {...technologies[icon]} />;
+      return <SiJavascript {...technologies[icon]} key={id} />;
     case "rabbitmq":
-      return <SiRabbitmq {...technologies[icon]} />;
+      return <SiRabbitmq {...technologies[icon]} key={id} />;
     case "redis":
-      return <SiRedis {...technologies[icon]} />;
+      return <SiRedis {...technologies[icon]} key={id} />;
     case "postgresql":
-      return <SiPostgresql {...technologies[icon]} />;
+      return <SiPostgresql {...technologies[icon]} key={id} />;
     case "mongodb":
-      return <SiMongodb {...technologies[icon]} />;
+      return <SiMongodb {...technologies[icon]} key={id} />;
     case "socketio":
-      return <SiSocketdotio {...technologies[icon]} />;
+      return <SiSocketdotio {...technologies[icon]} key={id} />;
     case "golang":
-      return <FaGolang {...technologies[icon]} />;
+      return <FaGolang {...technologies[icon]} key={id} />;
     case "html":
-      return <IoLogoHtml5 {...technologies[icon]} />;
+      return <IoLogoHtml5 {...technologies[icon]} key={id} />;
     case "css":
-      return <IoLogoCss3 {...technologies[icon]} />;
+      return <IoLogoCss3 {...technologies[icon]} key={id} />;
     default:
       return <></>;
   }

@@ -6,8 +6,8 @@ function Project({ data, indx }) {
   return (
     <div
       className={
-        "min-w-[220px] max-w-[450px] md:max-w-[400px] p-10 bg-neutral-800 hover:scale-105 transition-all duration-200 rounded-sm lg:group-hover:opacity-50 lg:hover:!opacity-100 " +
-        (indx % 2 === 0 ? "-translate-y-10" : "")
+        "min-w-[220px] max-w-[450px] md:max-w-[400px] p-10 bg-neutral-800 lg:hover:scale-105 transition-all duration-200 rounded-sm lg:group-hover:opacity-50 lg:hover:!opacity-100 " +
+        (indx % 2 === 0 ? "lg:-translate-y-10" : "")
       }
     >
       <div className="text-neutral-400 mb-5 flex justify-between">
@@ -41,7 +41,7 @@ function Project({ data, indx }) {
         {data.description}
       </div>
       <div className="gap-2 flex float-right">
-        {data.techStack.map((tech) => Icon({ icon: tech }))}
+        {data.techStack.map((tech, id) => Icon({ icon: tech, id: id }))}
       </div>
     </div>
   );

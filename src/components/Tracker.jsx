@@ -1,7 +1,7 @@
 function Tracker({ active }) {
   return (
     <div className="hidden lg:block my-2 w-96 mx-auto dark:text-[#949495]">
-      <a className="flex gap-x-2 group my-4" href="#Work">
+      <a className="flex gap-x-2 group my-4" href="#Experience">
         01
         <span
           className={
@@ -9,7 +9,7 @@ function Tracker({ active }) {
             (active === 0 ? "w-24" : "")
           }
         ></span>
-        Work
+        Experience
       </a>
       <a className="flex gap-x-2 group my-4" href="#Projects">
         02
