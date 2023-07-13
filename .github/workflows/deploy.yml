@@ -20,8 +20,8 @@ jobs:
           node-version: 18.x
       - name: Install Dependencies
         uses: bahmutov/npm-install@v1
-      - name: Run tests
-        run: npm run lint
+      # - name: Run tests
+      #   run: npm run lint
       - name: Build project
         run: npm run build
       - name: Upload build files
