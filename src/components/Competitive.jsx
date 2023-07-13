@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 
-function LineGraph() {
-  return <Chart options={options} series={series} type="line" />;
-}
+// function LineGraph() {
+//   return <Chart options={options} series={series} type="line" />;
+// }
 
 function Competitive() {
   const [site, setSite] = useState("leetcode");
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   useEffect(() => {
     // Fetch
     console.log(site);
