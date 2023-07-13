@@ -7,9 +7,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: "dist",
-    watch: {
-      include: "src/**",
-      exclude: "node_modules/**",
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+      },
     },
   },
 });
