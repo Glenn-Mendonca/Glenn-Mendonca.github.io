@@ -6,7 +6,7 @@ import "./globals.css";
 // Layouts
 import Layout from "./layouts/Layout";
 import Home from "./layouts/Home";
-import Error from "./layouts/error";
+import Error from "./layouts/Error";
 
 // Components
 import Blogs from "./components/Blogs";
@@ -27,5 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
