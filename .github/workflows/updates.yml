@@ -1,7 +1,6 @@
 name: Competitive Programming Updates
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: "0/5 * * * *"
 
@@ -10,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: gh-pages    
 
       - name: Fetch data
         id: CP-Updates
@@ -28,5 +29,4 @@ jobs:
           author_name: "Glenn Mendonca"
           author_email: "glenem17@gmail.com"
           message: "Update contests data"
-          push: "gh-pages"
 
