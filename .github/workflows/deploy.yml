@@ -43,6 +43,9 @@ jobs:
           name: build
           path: ./dist
 
+      - name: Copying data folder
+        run: cp -r data ./dist/data
+
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
