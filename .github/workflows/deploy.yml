@@ -14,16 +14,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+
       - name: Install Dependencies
         uses: bahmutov/npm-install@v1
+
       # - name: Run tests
       #   run: npm run lint
+      
       - name: Build project
         run: npm run build
+
+      - name: Copying data folder
+        run: cp -r data ./dist/data
+        
       - name: Upload build files
         uses: actions/upload-artifact@v3
         with:
@@ -42,9 +50,6 @@ jobs:
         with:
           name: build
           path: ./dist
-
-      - name: Copying data folder
-        run: cp -r data ./dist/data
 
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
