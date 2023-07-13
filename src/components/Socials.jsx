@@ -19,7 +19,7 @@ function Socials() {
         >
           <FiGithub
             size={35}
-            className="group-hover:bg-[#e6edf3] rounded-full group-hover:text-dark-secondary transition-all duration-200 p-0.5"
+            className="dark:group-hover:bg-[#e6edf3] group-hover:bg-dark-secondary rounded-full dark:group-hover:text-dark-secondary group-hover:text-light-secondary transition-all duration-200 p-0.5"
           />
           <span className="my-auto">Github</span>
         </a>

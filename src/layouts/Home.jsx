@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Comptitive from "../components/Competitive";
@@ -8,8 +8,12 @@ import Tracker from "../components/Tracker";
 import Work from "../components/Work";
 
 import { FiExternalLink } from "react-icons/fi";
+import Footer from "../components/Footer";
+import Achievement from "../components/Achievement";
 
 function Home() {
+  const divRef = useRef(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
   const [active, setActive] = useState(0);
   const [work, setWork] = useState([
     {
@@ -55,9 +59,11 @@ function Home() {
       description:
         "Leading a team of 5 developers to build a website for the alumni association of my college.",
       techStack: ["react", "nextjs", "tailwindcss", "firebase"],
+      githubLink: "https://test.com",
+      externalLink: "https://test.com",
     },
     {
-      id: 1,
+      id: 2,
       projectName: "Project 1",
       startDate: "Aug 2021",
       endDate: "Aug 2022",
@@ -66,7 +72,7 @@ function Home() {
       techStack: ["react", "nextjs", "tailwindcss", "firebase"],
     },
     {
-      id: 1,
+      id: 3,
       projectName: "Project 1",
       startDate: "Aug 2021",
       endDate: "Aug 2022",
@@ -75,7 +81,7 @@ function Home() {
       techStack: ["react", "nextjs", "tailwindcss", "firebase"],
     },
     {
-      id: 1,
+      id: 4,
       projectName: "Project 1",
       startDate: "Aug 2021",
       endDate: "Aug 2022",
@@ -84,6 +90,29 @@ function Home() {
       techStack: ["react", "nextjs", "tailwindcss", "firebase"],
     },
   ]);
+  const [achievements, setAchievements] = useState([
+    {
+      name: "Top 3% AIR eYantra Robotics Competition 2021-22",
+      link: "https://www.e-yantra.org/eyrc/2021-22/",
+    },
+    {
+      name: "Google Kickstart 2022, rank 2811/20k+",
+      link: "https://codingcompetitions.withgoogle.com/kickstart/round/000000000000ffc8/0000000000108f1c",
+    },
+    {
+      name: "Top 10 Semicode 2023, NMIMS MPSTME",
+      link: "https://www.semicode.in/",
+    },
+    {
+      name: "Leetcode top 9.5%, 475+ problems solved",
+      link: "https://leetcode.com/glen17/",
+    },
+    {
+      name: "1st rank 🥇 Fr CRCE Robocon Coding Competition 2021",
+      link: "https://www.instagram.com/p/CP9Z3Y3n7ZI/",
+    },
+  ]);
+
   // useEffect(() => {
   //   fetch("https://github.com/Glenn-Mendonca/glenn-mendonca.github.io/blob/main/data/work.json")
   //     .then((res) => res.json())
@@ -96,18 +125,41 @@ function Home() {
   //     .catch((err) => console.log(err));
   // }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio < 1) setIsIntersecting(true);
+        else if (entry.intersectionRatio == 1) setIsIntersecting(false);
+      },
+      {
+        root: divRef.current.parent,
+        threshold: [1],
+        rootMargin: "-20px",
+      }
+    );
+    observer.observe(divRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="lg:flex max-w-[1400px] xl:gap-10 delay-50 lg:h-screen transition-all first-line:lg:gap-5 mx-auto block bg-light-primary dark:bg-dark-primary">
-      <div className=" dark:text-light-secondary text-dark-secondary lg:max-w-[500px] lg:max-h-[800px] my-auto py-8 px-7 overflow-y-auto lg:h-screen lg:flex flex-col justify-between">
+      <div className="dark:text-light-secondary text-dark-secondary lg:max-w-[500px] lg:max-h-[800px] my-auto py-8 px-7 overflow-y-auto lg:h-screen lg:flex flex-col justify-between max-w-[850px] mx-auto">
         <About />
         <Tracker active={active} />
         <Socials />
       </div>
-      <div className="flex-1 lg:w-1/2 lg:overflow-y-scroll no-scrollbar lg:py-4 px-7 bg-light-primary dark:bg-dark-primary max-w-[850px]">
+      <div className="flex-1 lg:w-1/2 lg:overflow-y-scroll no-scrollbar lg:py-4 px-7 bg-light-primary dark:bg-dark-primary max-w-[850px] mx-auto relative">
+        <div
+          ref={divRef}
+          className={
+            "lg:hidden h-16 dark:bg-[#313132] -top-1 -mb-20 sticky " +
+            (isIntersecting ? "visible" : "invisible")
+          }
+        ></div>
         <div>
           <h3
             id="Experience"
-            className="font-bold text-light-secondary text-2xl my-5 lg:flex hidden gap-x-1.5"
+            className="font-bold dark:text-light-secondary text-dark-secondary text-2xl my-5 lg:flex gap-x-1.5 sticky lg:relative top-3"
           >
             <span className="dark:text-light-secondary text-dark-secondary animate-pulse duration-75 font-extrabold">
               &gt;
@@ -123,7 +175,7 @@ function Home() {
         <div>
           <h3
             id="Projects"
-            className="font-bold text-light-secondary text-2xl my-5 lg:flex hidden gap-x-1.5"
+            className="font-bold dark:text-light-secondary text-dark-secondary text-2xl my-5 lg:flex gap-x-1.5 sticky lg:relative top-3"
           >
             <span className="dark:text-light-secondary text-dark-secondary animate-pulse duration-75 font-extrabold">
               &gt;
@@ -139,7 +191,7 @@ function Home() {
         <div>
           <h3
             id="Contests"
-            className="font-bold text-light-secondary text-2xl my-5 lg:flex hidden gap-x-1.5"
+            className="font-bold dark:text-light-secondary text-dark-secondary text-2xl my-5 lg:flex gap-x-1.5 sticky lg:relative top-3"
           >
             <span className="dark:text-light-secondary text-dark-secondary animate-pulse duration-75 font-extrabold">
               &gt;
@@ -151,7 +203,7 @@ function Home() {
         <div>
           <h3
             id="Achievements"
-            className="font-bold text-light-secondary text-2xl my-5 lg:flex hidden gap-x-1.5"
+            className="font-bold dark:text-light-secondary text-dark-secondary text-2xl my-5 lg:flex gap-x-1.5 sticky lg:relative top-3"
           >
             <span className="dark:text-light-secondary text-dark-secondary animate-pulse duration-75 font-extrabold">
               &gt;
@@ -159,69 +211,21 @@ function Home() {
             🏆 Achievements
           </h3>
           <div className="ml-4">
-            <ul className="text-dark-secondary dark:text-light-secondary list-disc ml-3 leading-loose">
-              <li className="w-fit">
-                <a href="" className="hover:font-semibold transition-all group">
-                  <div className="inline-block">
-                    <span className="flex">
-                      Top 3% AIR eYantra Robotics Competition 2021-22
-                      <FiExternalLink className="my-auto inline ml-2" />
-                    </span>
-                  </div>
-                  <span class="block max-w-0 group-hover:max-w-full transition-all -mt-0.5 duration-500 h-0.5 bg-dark-secondary dark:bg-light-secondary"></span>
-                </a>
-              </li>
-              <li className="w-fit">
-                <a href="" className="hover:font-semibold transition-all group">
-                  <div className="inline-block">
-                    <span className="flex">
-                      Google Kickstart 2022, rank 2811/20k+
-                      <FiExternalLink className="my-auto inline ml-2" />
-                    </span>
-                  </div>
-                  <span class="block max-w-0 group-hover:max-w-full transition-all -mt-0.5 duration-500 h-0.5 bg-dark-secondary dark:bg-light-secondary"></span>
-                </a>
-              </li>
-              <li className="w-fit">
-                <a href="" className="hover:font-semibold transition-all group">
-                  <div className="inline-block">
-                    <span className="flex">
-                      Top 10 Semicode 2023, NMIMS MPSTME
-                      <FiExternalLink className="my-auto inline ml-2" />
-                    </span>
-                  </div>
-                  <span class="block max-w-0 group-hover:max-w-full transition-all -mt-0.5 duration-500 h-0.5 bg-dark-secondary dark:bg-light-secondary"></span>
-                </a>
-              </li>
-              <li className="w-fit">
-                <a href="" className="hover:font-semibold transition-all group">
-                  <div className="inline-block">
-                    <span className="flex">
-                      Leetcode top 9.5%, 475+ problems solved
-                      <FiExternalLink className="my-auto inline ml-2" />
-                    </span>
-                  </div>
-                  <span class="block max-w-0 group-hover:max-w-full transition-all -mt-0.5 duration-500 h-0.5 bg-dark-secondary dark:bg-light-secondary"></span>
-                </a>
-              </li>
-              <li className="w-fit">
-                <a href="" className="hover:font-semibold transition-all group">
-                  <div className="inline-block">
-                    <span className="flex">
-                      1st rank 🥇 Fr CRCE Robocon Coding Competition 2021
-                      <FiExternalLink className="my-auto inline ml-2" />
-                    </span>
-                  </div>
-                  <span class="block max-w-0 group-hover:max-w-full transition-all -mt-0.5 duration-500 h-0.5 bg-dark-secondary dark:bg-light-secondary"></span>
-                </a>
-              </li>
+            <ul className="text-dark-secondary dark:text-light-secondary list-disc ml-3 leading-relaxed">
+              {achievements.map((item) => (
+                <Achievement
+                  key={item.link}
+                  name={item.name}
+                  link={item.link}
+                />
+              ))}
             </ul>
           </div>
         </div>
         <div>
           <h3
             id="Contact"
-            className="font-bold text-light-secondary text-2xl my-5 lg:flex hidden gap-x-1.5"
+            className="font-bold dark:text-light-secondary text-dark-secondary text-2xl my-5 lg:flex gap-x-1.5 sticky lg:relative top-3"
           >
             <span className="dark:text-light-secondary text-dark-secondary animate-pulse duration-75 font-extrabold">
               &gt;
@@ -230,6 +234,7 @@ function Home() {
           </h3>
           <Contact />
         </div>
+        <Footer />
       </div>
     </div>
   );
