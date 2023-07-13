@@ -1,6 +1,7 @@
 name: Competitive Programming Updates
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0/5 * * * *"
 
@@ -20,19 +21,12 @@ jobs:
       - name: Update data
         run: echo "${{ steps.CP-Updates.outputs.response }}" > data/contests.json
 
-      - name: Configure git
-        run: |
-          git config --global user.name "Glenn Mendonca"
-          git config --global user.email "glenem17@gmail.com"
+      - name: Commit contests data
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: data/contests.json
+          author_name: "Glenn Mendonca"
+          author_email: "glenem17@gmail.com"
+          message: "Update contests data"
+          push: "gh-pages"
 
-      - name: Checkout gh-pages branch
-        run: |
-          git checkout gh-pages
-
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git add contests.json
-          git commit -m "Update CP ratings in contests.json"
-          git push origin gh-pages
