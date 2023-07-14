@@ -40,7 +40,7 @@ function Project({ data, indx }) {
       <div className="dark:text-neutral-400 text-neutral-900 text-sm">
         {data.startDate} - {data.endDate}
       </div>
-      <div className="mt-6 text-base mb-3 dark:text-neutral-100 ">
+      <div className="mt-6 text-base mb-3 dark:text-neutral-100 lg:w-4/5 text-justify lg:text-left">
         {data.description}
       </div>
       <div className="gap-2 flex float-right">

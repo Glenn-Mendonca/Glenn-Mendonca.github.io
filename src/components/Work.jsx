@@ -10,7 +10,7 @@ function Work({ data }) {
       <div className="dark:text-white text-xl font-semibold">{data.role}</div>
       <div className="dark:text-white text-lg font-medium">@{data.company}</div>
       <div className="dark:text-neutral-400 text-base">{data.location}</div>
-      <div className="mt-6 text-base mb-3 dark:text-neutral-100 w-2/3 text-">
+      <div className="mt-6 text-base mb-3 dark:text-neutral-100 lg:w-4/5 xs:text-justify">
         {data.description}
       </div>
       <div className="gap-2 flex float-right">

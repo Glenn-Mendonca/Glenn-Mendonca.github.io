@@ -25,7 +25,7 @@ export default {
   },
   golang: {
     color: "#00a7d0",
-    size: 25,
+    size: 35,
   },
   html: {
     color: "#dd4b25",

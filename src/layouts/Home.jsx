@@ -18,25 +18,32 @@ function Home() {
   const [work, setWork] = useState([
     {
       id: 1,
-      startDate: "Aug 2021",
-      endDate: "Aug 2022",
-      role: "Tech Lead",
-      company: "FrCRCE Alumni Association",
-      location: "Mumbai, India",
+      startDate: "Sep 2022",
+      endDate: "Mar 2023",
+      role: "Web Developer",
+      company: "Technode",
+      location: "Naigaon, India",
       description:
-        "Leading a team of 5 developers to build a website for the alumni association of my college.",
-      techStack: ["react", "nextjs", "tailwindcss", "firebase"],
+        "Developed a NodeJS backend for persisting and processing IoT data using MQTT published messages. Utilized Docker, RabbitMQ, and ReactJS to create an IoT dashboard web application for data visualization.",
+      techStack: [
+        "react",
+        "tailwindcss",
+        "docker",
+        "rabbitmq",
+        "nodejs",
+        "javascript",
+      ],
     },
     {
       id: 2,
-      startDate: "Aug 2021",
+      startDate: "Jun 2021",
       endDate: "Aug 2022",
-      role: "Tech Lead",
-      company: "FrCRCE Alumni Association",
+      role: "eYSIP Intern",
+      company: "Eyantra, IIT Bombay",
       location: "Mumbai, India",
       description:
-        "Leading a team of 5 developers to build a website for the alumni association of my college.",
-      techStack: ["html", "nextjs", "rabbitmq", "python"],
+        "Developed a blockchain from scratch using Golang to reward eYRC participants in a decentralized manner. Created a blockchain explorer and ReactJS wallet for seamless user interaction.",
+      techStack: ["react", "golang", "python", "javascript"],
     },
     {
       id: 3,
@@ -46,62 +53,62 @@ function Home() {
       company: "FrCRCE Alumni Association",
       location: "Mumbai, India",
       description:
-        "Leading a team of 5 developers to build a website for the alumni association of my college.",
-      techStack: ["react", "nodejs", "tailwindcss", "docker"],
+        "Developed a website for the alumni association of my college. Achieved 17% reduced load time by incoorporating lazy loading and code splitting. Utilized ExpressJS to serve the website.",
+      techStack: ["html", "css", "nodejs", "javascript"],
     },
   ]);
   const [projects, setProjects] = useState([
     {
       id: 1,
-      projectName: "Project 1",
-      startDate: "Aug 2021",
-      endDate: "Aug 2022",
+      projectName: "Stock Market Prediction",
+      startDate: "Aug 2022",
+      endDate: "May 2023",
       description:
-        "Leading a team of 5 developers to build a website for the alumni association of my college.",
-      techStack: ["react", "nextjs", "tailwindcss", "firebase"],
-      githubLink: "https://test.com",
-      externalLink: "https://test.com",
+        "Developed a stock price prediction model using CNN-LSTM for predicting the future week price of a stock using historical data and latest news article sentiments",
+      techStack: ["html", "css", "python", "javascript"],
+      githubLink: "https://github.com/GlenR16/Stock-Market-Analyzer",
     },
     {
       id: 2,
-      projectName: "Project 1",
-      startDate: "Aug 2021",
-      endDate: "Aug 2022",
+      projectName: "Team Meeting Summarizer",
+      startDate: "Nov 2021",
+      endDate: "Mar 2022",
       description:
-        "Leading a team of 5 developers to build a website for the alumni association of my college.",
-      techStack: ["react", "nextjs", "tailwindcss", "firebase"],
+        "Developed a tkinter GUI application to generate gmeet transcript and summarize them using NLP and GPT-2. Used BS4 to scrape the captions and selenium to automate the process.",
+      techStack: ["python", "javascript"],
+      githubLink: "https://github.com/Glenn-Mendonca/Team-Meeting-Summarizer"
     },
     {
       id: 3,
-      projectName: "Project 1",
-      startDate: "Aug 2021",
+      projectName: "Password Manager",
+      startDate: "Aug 2022",
       endDate: "Aug 2022",
       description:
-        "Leading a team of 5 developers to build a website for the alumni association of my college.",
-      techStack: ["react", "nextjs", "tailwindcss", "firebase"],
+        "Developed a password manager using Tkinter and Json to store and retrieve passwords. Used cryptography to encrypt and decrypt the passwords using a master password.",
+      techStack: ["python"],
+      githubLink: "https://github.com/Glenn-Mendonca/Password-Manager",
     },
     {
       id: 4,
-      projectName: "Project 1",
-      startDate: "Aug 2021",
+      projectName: "Weather Chrome Extension ",
+      startDate: "Aug 2022",
       endDate: "Aug 2022",
       description:
-        "Leading a team of 5 developers to build a website for the alumni association of my college.",
-      techStack: ["react", "nextjs", "tailwindcss", "firebase"],
+        "Developed a chrome extension to display the weather of the user's location. Used OpenWeatherMap API to fetch the weather data behind a proxy express server.",
+      techStack: ["html", "css", "javascript", "nodejs"],
     },
   ]);
   const [achievements, setAchievements] = useState([
     {
       name: "Top 3% AIR eYantra Robotics Competition 2021-22",
-      link: "https://www.e-yantra.org/eyrc/2021-22/",
+      link: "https://drive.google.com/file/d/10yx2rDxSTpfldo-MhK7MNhYJlqdgOyXp/view?usp=drive_link",
     },
     {
-      name: "Google Kickstart 2022, rank 2811/20k+",
-      link: "https://codingcompetitions.withgoogle.com/kickstart/round/000000000000ffc8/0000000000108f1c",
+      name: "Google Kickstart 2022, rank 2811/20k+"
     },
     {
       name: "Top 10 Semicode 2023, NMIMS MPSTME",
-      link: "https://www.semicode.in/",
+      link: "https://drive.google.com/file/d/1P_zD1aVDhw-dA0i-VmfHGMOfEVThZfPM/view?usp=drive_link",
     },
     {
       name: "Leetcode top 9.5%, 475+ problems solved",
@@ -109,21 +116,13 @@ function Home() {
     },
     {
       name: "1st rank 🥇 Fr CRCE Robocon Coding Competition 2021",
-      link: "https://www.instagram.com/p/CP9Z3Y3n7ZI/",
+      link: "https://drive.google.com/file/d/1V3N-r0GHY3bV8wHPJT2knqOJ76eTbKW-/view?usp=drive_link",
+    },
+    {
+      name: "2nd rank 🥈 Fr CRCE Codelabs Coding Competition 2021",
+      link: "https://drive.google.com/file/d/1wG__O2WJUllW1Jv_nKRofVOpXJ0A1f-m/view?usp=drive_link",
     },
   ]);
-
-  // useEffect(() => {
-  //   fetch("https://github.com/Glenn-Mendonca/glenn-mendonca.github.io/blob/main/data/work.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setWork(data))
-  //     .catch((err) => console.log(err));
-
-  //   fetch("https://github.com/Glenn-Mendonca/glenn-mendonca.github.io/blob/main/data/projects.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setProjects(data))
-  //     .catch((err) => console.log(err));
-  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

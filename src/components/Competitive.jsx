@@ -30,7 +30,24 @@ function Competitive() {
         </select>
       </div>
 
-      <div className="h-72 w-full bg-light-secondary rounded-md mt-3"></div>
+      <div className="h-72 w-full bg-light-secondary rounded-md mt-3">
+        <div className="flex flex-col text-center w-full">
+          <span>Coming soon</span>
+          <a
+            href="https://codeforces.com/profile/glennmendonca"
+            target="_blank"
+            className="hover:underline"
+          >
+            Codeforces @glennmendonca
+          </a>
+          <a href="https://leetcode.com/glen17/" target="_blank" className="hover:underline">
+            Leetcode @glen17
+          </a>
+          <a href="https://www.codechef.com/users/glen17" target="_blank" className="hover:underline">
+            Codechef @glen17
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
