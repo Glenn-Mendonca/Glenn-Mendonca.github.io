@@ -76,7 +76,7 @@ function Home() {
       description:
         "Developed a tkinter GUI application to generate gmeet transcript and summarize them using NLP and GPT-2. Used BS4 to scrape the captions and selenium to automate the process.",
       techStack: ["python", "javascript"],
-      githubLink: "https://github.com/Glenn-Mendonca/Team-Meeting-Summarizer"
+      githubLink: "https://github.com/Glenn-Mendonca/Team-Meeting-Summarizer",
     },
     {
       id: 3,
@@ -104,7 +104,7 @@ function Home() {
       link: "https://drive.google.com/file/d/10yx2rDxSTpfldo-MhK7MNhYJlqdgOyXp/view?usp=drive_link",
     },
     {
-      name: "Google Kickstart 2022, rank 2811/20k+"
+      name: "Google Kickstart 2022, rank 2811/20k+",
     },
     {
       name: "Top 10 Semicode 2023, NMIMS MPSTME",
@@ -142,7 +142,7 @@ function Home() {
 
   return (
     <div className="lg:flex max-w-[1400px] xl:gap-10 delay-50 lg:h-screen transition-all first-line:lg:gap-5 mx-auto block bg-light-primary dark:bg-dark-primary">
-      <div className="dark:text-light-secondary text-dark-secondary lg:max-w-[500px] lg:max-h-[800px] my-auto py-8 px-7 overflow-y-auto lg:h-screen lg:flex flex-col justify-between max-w-[850px] mx-auto">
+      <div className="dark:text-light-secondary text-dark-secondary lg:max-w-[500px] lg:max-h-[800px] my-auto py-8 px-7 overflow-y-auto lg:h-screen lg:flex flex-col justify-between max-w-[850px] mx-auto lg:overflow-y-scroll no-scrollbar">
         <About />
         <Tracker active={active} />
         <Socials />
