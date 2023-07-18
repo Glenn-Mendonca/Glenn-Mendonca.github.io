@@ -22,13 +22,13 @@ jobs:
           method: "GET"
 
       - name: Update data
-        run: echo "${{ steps.CP-Updates.outputs.response.data }}" > contests.json
+        run: echo "${{ steps.CP-Updates.outputs.response.data }}" > data/contests.json
 
       - name: Show file content
-        run: cat contests.json
+        run: cat data/contests.json
 
       - name: Commit contests data
         uses: EndBug/add-and-commit@v9
         with:
-          add: contests.json
+          add: data/contests.json
           message: "Update contests data"
