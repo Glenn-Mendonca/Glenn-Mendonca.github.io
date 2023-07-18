@@ -21,7 +21,7 @@ jobs:
           method: "GET"
 
       - name: Update data
-        run: echo "${{ steps.CP-Updates.outputs.response }}" > contests.json
+        run: echo "${{ steps.CP-Updates.outputs.response }}" > contests.json && ls && pwd
 
       - name: Commit contests data
         uses: EndBug/add-and-commit@v9
