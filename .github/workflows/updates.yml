@@ -2,7 +2,7 @@ name: Competitive Programming Updates
 
 on:
   schedule:
-    - cron: "0/5 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   update:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: gh-pages    
+          ref: gh-pages
 
       - name: Fetch data
         id: CP-Updates
@@ -20,13 +20,12 @@ jobs:
           method: "GET"
 
       - name: Update data
-        run: echo "${{ steps.CP-Updates.outputs.response }}" > data/contests.json
+        run: echo "${{ steps.CP-Updates.outputs.response }}" > contests.json
 
       - name: Commit contests data
         uses: EndBug/add-and-commit@v9
         with:
-          add: data/contests.json
+          add: contests.json
           author_name: "Glenn Mendonca"
           author_email: "glenem17@gmail.com"
           message: "Update contests data"
-
