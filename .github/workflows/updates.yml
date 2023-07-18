@@ -22,7 +22,11 @@ jobs:
           method: "GET"
 
       - name: Update data
-        run: echo "${{ steps.CP-Updates.outputs.response }}" > data/contests.json
+        run: |
+          echo "${{ steps.CP-Updates.outputs.response.data }}" | 
+          while IFS= read -r line; do
+            printf '%s\n' "$line"
+          done > data/contests.json
 
       - name: Show file content
         run: cat data/contests.json
