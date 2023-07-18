@@ -9,7 +9,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           ref: gh-pages
 
@@ -21,7 +22,10 @@ jobs:
           method: "GET"
 
       - name: Update data
-        run: echo "${{ steps.CP-Updates.outputs.response }}" > contests.json && ls && pwd
+        run: echo "${{ steps.CP-Updates.outputs.response.data }}" > contests.json
+
+      - name: Show file content
+        run: cat contests.json
 
       - name: Commit contests data
         uses: EndBug/add-and-commit@v9
