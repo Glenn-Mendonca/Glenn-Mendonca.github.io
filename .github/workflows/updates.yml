@@ -23,10 +23,12 @@ jobs:
 
       - name: Update data
         run: |
-          echo "${{ steps.CP-Updates.outputs.response.data }}" | 
-          while IFS= read -r line; do
-            printf '%s\n' "$line"
-          done > data/contests.json
+          data="${{ steps.CP-Updates.outputs.response }}"
+          if [[ -n $data ]]; then
+            printf '%s\n' "$data" > data/contests.json
+          else
+            echo "No data received from CP-Updates step."
+          fi
 
       - name: Show file content
         run: cat data/contests.json
@@ -34,5 +36,5 @@ jobs:
       - name: Commit contests data
         uses: EndBug/add-and-commit@v9
         with:
-          add: data/contests.json
+          add: contests.json
           message: "Update contests data"
