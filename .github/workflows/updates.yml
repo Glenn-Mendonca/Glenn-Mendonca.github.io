@@ -14,21 +14,9 @@ jobs:
         with:
           ref: gh-pages
 
-      - name: Fetch data
-        id: CP-Updates
-        uses: fjogeleit/http-request-action@master
-        with:
-          url: "https://clist.by/coder/glen17/ratings/"
-          method: "GET"
-
-      - name: Update data
+      - name: Fetch & Update data
         run: |
-          data="${{ steps.CP-Updates.outputs.response }}"
-          if [[ -n $data ]]; then
-            printf '%s\n' "$data" > data/contests.json
-          else
-            echo "No data received from CP-Updates step."
-          fi
+          curl https://clist.by/coder/glen17/ratings/ > data/contests.json
 
       - name: Show file content
         run: cat data/contests.json
