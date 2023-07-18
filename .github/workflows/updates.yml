@@ -26,6 +26,4 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           add: contests.json
-          author_name: "Glenn Mendonca"
-          author_email: "glenem17@gmail.com"
           message: "Update contests data"
