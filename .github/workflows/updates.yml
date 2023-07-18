@@ -2,7 +2,7 @@ name: Competitive Programming Updates
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -24,5 +24,5 @@ jobs:
       - name: Commit contests data
         uses: EndBug/add-and-commit@v9
         with:
-          add: contests.json
+          add: data/contests.json
           message: "Update contests data"
